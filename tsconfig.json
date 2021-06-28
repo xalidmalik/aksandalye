@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "sources/*": ["sources/*"],
       "containers/*": ["sources/containers/*"]
     }
   },
