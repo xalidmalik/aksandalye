@@ -1,5 +1,5 @@
 overwrite: true
-schema: 'https://aksandalye-strapi.herokuapp.com/graphql'
+schema: "https://aksandalye-strapi.herokuapp.com/graphql"
 documents: 'sources/api/graphql/**/*.graphql'
 generates:
   sources/api/generated/introspection.json:

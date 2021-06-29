@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "gen": "graphql-codegen --config sources/api/codegen.yml"
+    "gen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@urql/devtools": "^2.0.3",
     "graphql": "^15.5.1",
     "next": "latest",
     "next-urql": "^3.1.0",

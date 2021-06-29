@@ -1,3 +1,4 @@
+import { devtoolsExchange } from "@urql/devtools";
 import {
   cacheExchange,
   createClient,
@@ -10,7 +11,13 @@ const isServerSide = typeof window === "undefined";
 const ssrCache = ssrExchange({ isClient: !isServerSide });
 const client = createClient({
   url: process.env.GRAPHQL_URL,
-  exchanges: [dedupExchange, cacheExchange, ssrCache, fetchExchange],
+  exchanges: [
+    devtoolsExchange,
+    dedupExchange,
+    cacheExchange,
+    ssrCache,
+    fetchExchange,
+  ],
   fetchOptions: () => {
     return { headers: {} };
   },
