@@ -9,6 +9,7 @@ import {
 
 const isServerSide = typeof window === "undefined";
 const ssrCache = ssrExchange({ isClient: !isServerSide });
+
 const client = createClient({
   url: process.env.GRAPHQL_URL,
   exchanges: [

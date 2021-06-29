@@ -1,11 +1,11 @@
 import {
-  CategoriesDocument,
-  useCategoriesQuery,
+  HomeProductsDocument,
+  useHomeProductsQuery,
 } from "sources/api/generated/graphql";
 import { client, ssrCache } from "sources/api/urql/urql-client";
 
 export default function Home() {
-  const [{ data, fetching, error }] = useCategoriesQuery();
+  const [{ data, fetching, error }] = useHomeProductsQuery();
 
   if (fetching) return <div>Loading</div>;
   if (error) return <div>Error</div>;
@@ -28,6 +28,6 @@ export default function Home() {
 }
 
 export async function getStaticProps() {
-  await client.query(CategoriesDocument).toPromise();
+  await client.query(HomeProductsDocument).toPromise();
   return { props: { urqlState: ssrCache.extractData() }, revalidate: 60 };
 }
