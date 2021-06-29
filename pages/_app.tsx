@@ -1,4 +1,4 @@
-import { client, ssrCache } from "sources/api/urql-client";
+import { client, ssrCache } from "sources/api/urql/urql-client";
 import "tailwindcss/tailwind.css";
 import { Provider } from "urql";
 

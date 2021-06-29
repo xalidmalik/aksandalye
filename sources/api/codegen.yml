@@ -1,0 +1,19 @@
+overwrite: true
+schema: 'https://aksandalye-strapi.herokuapp.com/graphql'
+documents: 'sources/api/graphql/**/*.graphql'
+generates:
+  sources/api/generated/introspection.json:
+    plugins:
+      - introspection
+    config:
+      minify: true
+  sources/api/generated/graphql.tsx:
+    config:
+      onlyOperationTypes: true
+      enumsAsConst: true
+      preResolveTypes: true
+      skipTypename: false
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-urql'
