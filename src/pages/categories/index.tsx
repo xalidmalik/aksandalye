@@ -1,8 +1,8 @@
 import {
   CategoriesDocument,
   useCategoriesQuery,
-} from "sources/api/generated/graphql";
-import { client, ssrCache } from "sources/api/urql/urql-client";
+} from "src/api/generated/graphql";
+import { client, ssrCache } from "src/api/urql/urql-client";
 
 export default function Categories() {
   const [{ data, fetching, error }] = useCategoriesQuery();

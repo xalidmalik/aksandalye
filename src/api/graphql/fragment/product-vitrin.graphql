@@ -1,11 +1,7 @@
 fragment ProductVitrin on Product {
-  id
   name
   slug
   image {
     url
-  }
-  meta {
-    title
   }
 }

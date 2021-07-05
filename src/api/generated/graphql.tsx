@@ -336,7 +336,7 @@ export type UpdateUserInput = {
 };
 
 
-export type ProductVitrinFragment = { __typename?: 'Product', id: string, name?: Maybe<string>, slug?: Maybe<string>, image?: Maybe<{ __typename?: 'UploadFile', url: string }>, meta?: Maybe<{ __typename?: 'ComponentSeoMeta', title?: Maybe<string> }> };
+export type ProductVitrinFragment = { __typename?: 'Product', name?: Maybe<string>, slug?: Maybe<string>, image?: Maybe<{ __typename?: 'UploadFile', url: string }> };
 
 export type CategoriesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -402,14 +402,10 @@ export type HomeProductsQuery = { __typename?: 'Query', bar?: Maybe<Array<Maybe<
 
 export const ProductVitrinFragmentDoc = gql`
     fragment ProductVitrin on Product {
-  id
   name
   slug
   image {
     url
-  }
-  meta {
-    title
   }
 }
     `;
@@ -426,65 +422,65 @@ export function useCategoriesQuery(options: Omit<Urql.UseQueryArgs<CategoriesQue
 };
 export const HomeProductsDocument = gql`
     query HomeProducts {
-  bar: products(limit: 6, where: {categories: {slug: "bar-sandalyeleri"}}) {
+  bar: products(limit: 4, where: {categories: {slug: "bar-sandalyeleri"}}) {
     ...ProductVitrin
   }
-  bench: products(limit: 6, where: {categories: {slug: "benchler"}}) {
+  bench: products(limit: 4, where: {categories: {slug: "benchler"}}) {
     ...ProductVitrin
   }
-  bergere: products(limit: 6, where: {categories: {slug: "berjerler"}}) {
+  bergere: products(limit: 4, where: {categories: {slug: "berjerler"}}) {
     ...ProductVitrin
   }
-  bookshelf: products(limit: 6, where: {categories: {slug: "kitapliklar"}}) {
+  bookshelf: products(limit: 4, where: {categories: {slug: "kitapliklar"}}) {
     ...ProductVitrin
   }
-  seat: products(limit: 6, where: {categories: {slug: "koltuklar"}}) {
+  seat: products(limit: 4, where: {categories: {slug: "koltuklar"}}) {
     ...ProductVitrin
   }
-  console: products(limit: 6, where: {categories: {slug: "konsollar"}}) {
+  console: products(limit: 4, where: {categories: {slug: "konsollar"}}) {
     ...ProductVitrin
   }
-  lodges: products(limit: 6, where: {categories: {slug: "localar"}}) {
+  lodges: products(limit: 4, where: {categories: {slug: "localar"}}) {
     ...ProductVitrin
   }
-  tableLeg: products(limit: 6, where: {categories: {slug: "masa-ayaklari"}}) {
+  tableLeg: products(limit: 4, where: {categories: {slug: "masa-ayaklari"}}) {
     ...ProductVitrin
   }
-  table: products(limit: 6, where: {categories: {slug: "masalar"}}) {
+  table: products(limit: 4, where: {categories: {slug: "masalar"}}) {
     ...ProductVitrin
   }
   officeChair: products(
-    limit: 6
+    limit: 4
     where: {categories: {slug: "ofis-sandalyeleri"}}
   ) {
     ...ProductVitrin
   }
-  puff: products(limit: 6, where: {categories: {slug: "puflar"}}) {
+  puff: products(limit: 4, where: {categories: {slug: "puflar"}}) {
     ...ProductVitrin
   }
-  chair: products(limit: 6, where: {categories: {slug: "sandalye-1"}}) {
+  chair: products(limit: 4, where: {categories: {slug: "sandalye-1"}}) {
     ...ProductVitrin
   }
   coffeTableLegs: products(
-    limit: 6
+    limit: 4
     where: {categories: {slug: "sehpa-ayaklari"}}
   ) {
     ...ProductVitrin
   }
-  coffeTable: products(limit: 6, where: {categories: {slug: "sehpalar"}}) {
+  coffeTable: products(limit: 4, where: {categories: {slug: "sehpalar"}}) {
     ...ProductVitrin
     ...ProductVitrin
   }
-  servant: products(limit: 6, where: {categories: {slug: "servantlar"}}) {
+  servant: products(limit: 4, where: {categories: {slug: "servantlar"}}) {
     ...ProductVitrin
   }
-  coffeTable: products(limit: 6, where: {categories: {slug: "sehpalar"}}) {
+  coffeTable: products(limit: 4, where: {categories: {slug: "sehpalar"}}) {
     ...ProductVitrin
   }
-  painting: products(limit: 6, where: {categories: {slug: "tablalar"}}) {
+  painting: products(limit: 4, where: {categories: {slug: "tablalar"}}) {
     ...ProductVitrin
   }
-  unit: products(limit: 6, where: {categories: {slug: "uniteler"}}) {
+  unit: products(limit: 4, where: {categories: {slug: "uniteler"}}) {
     ...ProductVitrin
   }
 }
