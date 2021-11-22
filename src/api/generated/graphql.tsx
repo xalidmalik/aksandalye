@@ -346,31 +346,22 @@ export type CategoriesQuery = { __typename?: 'Query', categories?: Maybe<Array<M
 export type HomeProductsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type HomeProductsQuery = { __typename?: 'Query', bar?: Maybe<Array<Maybe<(
-    { __typename?: 'Product' }
-    & ProductVitrinFragment
-  )>>>, bench?: Maybe<Array<Maybe<(
+export type HomeProductsQuery = { __typename?: 'Query', chair?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
     & ProductVitrinFragment
   )>>>, bergere?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
     & ProductVitrinFragment
-  )>>>, bookshelf?: Maybe<Array<Maybe<(
+  )>>>, bar?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
     & ProductVitrinFragment
   )>>>, seat?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
     & ProductVitrinFragment
-  )>>>, console?: Maybe<Array<Maybe<(
+  )>>>, bench?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
     & ProductVitrinFragment
   )>>>, lodges?: Maybe<Array<Maybe<(
-    { __typename?: 'Product' }
-    & ProductVitrinFragment
-  )>>>, tableLeg?: Maybe<Array<Maybe<(
-    { __typename?: 'Product' }
-    & ProductVitrinFragment
-  )>>>, table?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
     & ProductVitrinFragment
   )>>>, officeChair?: Maybe<Array<Maybe<(
@@ -379,15 +370,21 @@ export type HomeProductsQuery = { __typename?: 'Query', bar?: Maybe<Array<Maybe<
   )>>>, puff?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
     & ProductVitrinFragment
-  )>>>, chair?: Maybe<Array<Maybe<(
+  )>>>, console?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
     & ProductVitrinFragment
-  )>>>, coffeTableLegs?: Maybe<Array<Maybe<(
+  )>>>, table?: Maybe<Array<Maybe<(
+    { __typename?: 'Product' }
+    & ProductVitrinFragment
+  )>>>, tableLeg?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
     & ProductVitrinFragment
   )>>>, coffeTable?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
     & ProductVitrinFragment
+    & ProductVitrinFragment
+  )>>>, coffeTableLegs?: Maybe<Array<Maybe<(
+    { __typename?: 'Product' }
     & ProductVitrinFragment
   )>>>, servant?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
@@ -396,6 +393,9 @@ export type HomeProductsQuery = { __typename?: 'Query', bar?: Maybe<Array<Maybe<
     { __typename?: 'Product' }
     & ProductVitrinFragment
   )>>>, unit?: Maybe<Array<Maybe<(
+    { __typename?: 'Product' }
+    & ProductVitrinFragment
+  )>>>, bookshelf?: Maybe<Array<Maybe<(
     { __typename?: 'Product' }
     & ProductVitrinFragment
   )>>> };
@@ -422,31 +422,22 @@ export function useCategoriesQuery(options: Omit<Urql.UseQueryArgs<CategoriesQue
 };
 export const HomeProductsDocument = gql`
     query HomeProducts {
-  bar: products(limit: 4, where: {categories: {slug: "bar-sandalyeleri"}}) {
-    ...ProductVitrin
-  }
-  bench: products(limit: 4, where: {categories: {slug: "benchler"}}) {
+  chair: products(limit: 4, where: {categories: {slug: "sandalye-1"}}) {
     ...ProductVitrin
   }
   bergere: products(limit: 4, where: {categories: {slug: "berjerler"}}) {
     ...ProductVitrin
   }
-  bookshelf: products(limit: 4, where: {categories: {slug: "kitapliklar"}}) {
+  bar: products(limit: 4, where: {categories: {slug: "bar-sandalyeleri"}}) {
     ...ProductVitrin
   }
   seat: products(limit: 4, where: {categories: {slug: "koltuklar"}}) {
     ...ProductVitrin
   }
-  console: products(limit: 4, where: {categories: {slug: "konsollar"}}) {
+  bench: products(limit: 4, where: {categories: {slug: "benchler"}}) {
     ...ProductVitrin
   }
   lodges: products(limit: 4, where: {categories: {slug: "localar"}}) {
-    ...ProductVitrin
-  }
-  tableLeg: products(limit: 4, where: {categories: {slug: "masa-ayaklari"}}) {
-    ...ProductVitrin
-  }
-  table: products(limit: 4, where: {categories: {slug: "masalar"}}) {
     ...ProductVitrin
   }
   officeChair: products(
@@ -458,17 +449,23 @@ export const HomeProductsDocument = gql`
   puff: products(limit: 4, where: {categories: {slug: "puflar"}}) {
     ...ProductVitrin
   }
-  chair: products(limit: 4, where: {categories: {slug: "sandalye-1"}}) {
+  console: products(limit: 4, where: {categories: {slug: "konsollar"}}) {
+    ...ProductVitrin
+  }
+  table: products(limit: 4, where: {categories: {slug: "masalar"}}) {
+    ...ProductVitrin
+  }
+  tableLeg: products(limit: 4, where: {categories: {slug: "masa-ayaklari"}}) {
+    ...ProductVitrin
+  }
+  coffeTable: products(limit: 4, where: {categories: {slug: "sehpalar"}}) {
+    ...ProductVitrin
     ...ProductVitrin
   }
   coffeTableLegs: products(
     limit: 4
     where: {categories: {slug: "sehpa-ayaklari"}}
   ) {
-    ...ProductVitrin
-  }
-  coffeTable: products(limit: 4, where: {categories: {slug: "sehpalar"}}) {
-    ...ProductVitrin
     ...ProductVitrin
   }
   servant: products(limit: 4, where: {categories: {slug: "servantlar"}}) {
@@ -481,6 +478,9 @@ export const HomeProductsDocument = gql`
     ...ProductVitrin
   }
   unit: products(limit: 4, where: {categories: {slug: "uniteler"}}) {
+    ...ProductVitrin
+  }
+  bookshelf: products(limit: 4, where: {categories: {slug: "kitapliklar"}}) {
     ...ProductVitrin
   }
 }

@@ -1,5 +1,6 @@
 import { client, ssrCache } from "src/api/urql/urql-client";
-import "tailwindcss/tailwind.css";
+import "styles/tailwind.css";
+// import "tailwindcss/tailwind.css";
 import { Provider } from "urql";
 
 function MyApp({ Component, pageProps }) {
