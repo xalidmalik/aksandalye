@@ -11,7 +11,6 @@ export default function Home({ product }) {
     url: product.image.url,
   }));
   const { query } = useRouter();
-  console.log("params", query);
   const imageGallery = useMemo(
     () => [product.image, ...product.gallery],
     [product]

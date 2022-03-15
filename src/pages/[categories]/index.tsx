@@ -8,7 +8,6 @@ import { Layout } from "sources/containers/layout";
 
 export default function Categories({ category }) {
   const { query } = useRouter();
-  console.log("params", query);
   return (
     <Layout meta={category.meta}>
       <main className="container my-32 flex gap-4 flex-col">
