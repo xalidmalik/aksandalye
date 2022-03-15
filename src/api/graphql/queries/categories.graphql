@@ -1,5 +1,13 @@
-query Categories {
-  categories {
+query Category($id: ID!) {
+  category(id: $id) {
+    id
     name
+    meta {
+      title
+      description
+    }
+    products {
+      ...ProductVitrin
+    }
   }
 }

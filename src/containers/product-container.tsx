@@ -16,9 +16,7 @@ export const ProductContainer = ({
       </div>
       <div className="grid grid-cols-4 overflow-hidden">
         {products.map((d) => {
-          return (
-            <Product key={d.slug} name={d.name} slug={d.slug} image={d.image} />
-          );
+          return <Product key={d.slug} {...d} />;
         })}
       </div>
     </div>
@@ -31,13 +29,17 @@ export const renderProducts = (data: HomeProductsQuery) => {
   for (let cat in data) {
     categories.push(cat);
   }
+
   return categories.map((cat) => {
-    const nameCapitalized = cat.charAt(0).toUpperCase() + cat.slice(1);
+    const categoryNameForTitle = (cat.charAt(0).toUpperCase() + cat.slice(1))
+      .split("_")
+      .join(" ");
+    const categorySlug = cat.split("_").join("-");
     return (
       <ProductContainer
         key={cat}
-        title={nameCapitalized}
-        slug={cat}
+        title={categoryNameForTitle}
+        slug={categorySlug}
         products={data[cat]}
       />
     );

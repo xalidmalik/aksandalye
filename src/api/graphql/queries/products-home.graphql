@@ -1,69 +1,72 @@
 query HomeProducts {
-  chair: products(limit: 4, where: { categories: { slug: "sandalye-1" } }) {
+  sandalye: products(limit: 4, where: { categories: { slug: "sandalye" } }) {
     ...ProductVitrin
   }
-  bergere: products(limit: 4, where: { categories: { slug: "berjerler" } }) {
+  berjerler: products(limit: 4, where: { categories: { slug: "berjerler" } }) {
     ...ProductVitrin
   }
-  bar: products(limit: 4, where: { categories: { slug: "bar-sandalyeleri" } }) {
+  bar_sandalyeleri: products(
+    limit: 4
+    where: { categories: { slug: "bar-sandalyeleri" } }
+  ) {
     ...ProductVitrin
   }
-  seat: products(limit: 4, where: { categories: { slug: "koltuklar" } }) {
+  koltuklar: products(limit: 4, where: { categories: { slug: "koltuklar" } }) {
     ...ProductVitrin
   }
-  bench: products(limit: 4, where: { categories: { slug: "benchler" } }) {
+  benchler: products(limit: 4, where: { categories: { slug: "benchler" } }) {
     ...ProductVitrin
   }
-  lodges: products(limit: 4, where: { categories: { slug: "localar" } }) {
+  localar: products(limit: 4, where: { categories: { slug: "localar" } }) {
     ...ProductVitrin
   }
-  officeChair: products(
+  ofis_sandalyeleri: products(
     limit: 4
     where: { categories: { slug: "ofis-sandalyeleri" } }
   ) {
     ...ProductVitrin
   }
-  puff: products(limit: 4, where: { categories: { slug: "puflar" } }) {
+  puflar: products(limit: 4, where: { categories: { slug: "puflar" } }) {
     ...ProductVitrin
   }
 
-  console: products(limit: 4, where: { categories: { slug: "konsollar" } }) {
+  konsollar: products(limit: 4, where: { categories: { slug: "konsollar" } }) {
     ...ProductVitrin
   }
-  table: products(limit: 4, where: { categories: { slug: "masalar" } }) {
+  masalar: products(limit: 4, where: { categories: { slug: "masalar" } }) {
     ...ProductVitrin
   }
 
-  tableLeg: products(
+  masa_ayaklari: products(
     limit: 4
     where: { categories: { slug: "masa-ayaklari" } }
   ) {
     ...ProductVitrin
   }
 
-  coffeTable: products(limit: 4, where: { categories: { slug: "sehpalar" } }) {
+  sehpalar: products(limit: 4, where: { categories: { slug: "sehpalar" } }) {
     ...ProductVitrin
   }
-  coffeTableLegs: products(
+  sehpa_ayaklari: products(
     limit: 4
     where: { categories: { slug: "sehpa-ayaklari" } }
   ) {
     ...ProductVitrin
   }
 
-  servant: products(limit: 4, where: { categories: { slug: "servantlar" } }) {
+  servantlar: products(
+    limit: 4
+    where: { categories: { slug: "servantlar" } }
+  ) {
     ...ProductVitrin
   }
-  coffeTable: products(limit: 4, where: { categories: { slug: "sehpalar" } }) {
+  tablalar: products(limit: 4, where: { categories: { slug: "tablalar" } }) {
     ...ProductVitrin
   }
-  painting: products(limit: 4, where: { categories: { slug: "tablalar" } }) {
+  uniteler: products(limit: 4, where: { categories: { slug: "uniteler" } }) {
     ...ProductVitrin
   }
-  unit: products(limit: 4, where: { categories: { slug: "uniteler" } }) {
-    ...ProductVitrin
-  }
-  bookshelf: products(
+  kitapliklar: products(
     limit: 4
     where: { categories: { slug: "kitapliklar" } }
   ) {

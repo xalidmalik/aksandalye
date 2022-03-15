@@ -23,6 +23,9 @@ module.exports = {
       fontFamily: {
         astoria: ["AstoriaMedium", "sans-serif"],
       },
+      gridTemplateCols: {
+        product: "1fr 48rem",
+      },
     },
   },
   variants: {

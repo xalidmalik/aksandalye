@@ -1,6 +1,6 @@
 import { renderProducts } from "containers/product-container";
-import { Header } from "sources/containers/header";
 import { Hero } from "sources/containers/hero";
+import { Layout } from "sources/containers/layout";
 import {
   HomeProductsDocument,
   useHomeProductsQuery,
@@ -9,24 +9,17 @@ import { client, ssrCache } from "src/api/urql/urql-client";
 
 export default function Home() {
   const [{ data, fetching, error }] = useHomeProductsQuery();
-  console.log(data);
 
   if (fetching) return <div>Loading</div>;
   if (error) return <div>Error</div>;
 
   return (
-    <div className="">
-      {/* <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head> */}
-
-      <Header />
+    <Layout meta={{ title: "Ak Sandalye" }}>
       <Hero />
       <main className="container my-8">
-        <div className="grid grid-cols-1 gap-12">{renderProducts(data)}</div>
+        <div className="grid grid-cols-1 gap-12"> {renderProducts(data)}</div>
       </main>
-    </div>
+    </Layout>
   );
 }
 
